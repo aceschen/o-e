@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title>ORPHEUS BEGINS HIS JOURNEY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../styles.css" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <div id="close">
+      <a href="hades1.html"><button>ORPHEUS sees HADES.</button></a>
+      <br>
+    </div>
+
+    <p class="character">ORPHEUS: </p>
+    <p id="script"></p>
+    <div id="dive"></div>
+
+    <script>
+      var pace = 1000;
+      var river_interval = setInterval(river, pace);
+
+      var river_lines = [
+        "The river is long",
+        "and dark", 
+        "and wide.",
+        "I cannot see",
+        "the other side,",
+        "no matter how far",
+        "I crane my neck.",
+        "I have no choice",
+        "but to believe",
+        "the river has no end.",
+        ""
+      ]
+      var river_i = 0;
+
+      function river() {
+        write(river_lines[river_i]);
+        (river_i < river_lines.length - 1) ? (river_i+= 1) : (river_i = 0);
+      }
+
+      function write(text) {
+        let script = document.getElementById("script");
+        script.innerHTML += text + "<br>";
+      }
+
+      setTimeout(dive, pace*(river_lines.length));
+
+      function dive() {
+        let dive = document.getElementById("dive");
+        dive.innerHTML = "<button onclick='swim()''>ORPHEUS dives in.</button>";
+        let close = document.getElementById("close");
+        close.innerHTML += "<button onclick='closeall()''>ORPHEUS pulls himself out of the river.</button>"
+      }
+
+
+      
+
+      var windows = [];
+      function swim() {
+        document.body.style.backgroundColor = "#0000FF";
+        function riverWindow() {
+          let left = (100*i + 1000).toString();
+          let windowSpecs = "width=100,height=1000,left=" + left;
+          windows[i] = window.open("./river/river1.html", "", windowSpecs);
+          i += 1;
+          if (i > 6) {clearInterval(river_flow)};
+        }
+        var i = 0;
+        riverWindow();
+        var river_flow = setInterval(riverWindow, 500);
+      }
+
+      function closeall() {
+        windows.forEach(element => {
+          element.close();
+        });
+        window.open("./eurydice2.html", "eurydice", "width=700,height=1100,left=1000");
+      }
+    </script>
+
+  </body>
+</html>

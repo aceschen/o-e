@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>EURYDICE IN THE UNDERWORLD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../styles.css" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <p class="character">EURYDICE: </p>
+    <p id="script"></p>
+    <script>
+      var pace = 1000;
+      var lines = setInterval(death, pace);
+
+      var death_lines = [
+        "This death is long",
+        "and dark", 
+        "and wide.",
+        "I cannot see",
+        "the other side,",
+        "no matter how far",
+        "I crane my neck.",
+        "I have no choice",
+        "but to believe",
+        "this death has no end.",
+        ""
+      ]
+      var death_i = 0;
+
+      function death() {
+        write(death_lines[death_i]);
+        (death_i < death_lines.length - 1) ? (death_i+= 1) : clearInterval(lines);
+      }
+
+      function write(text) {
+        let script = document.getElementById("script");
+        script.innerHTML += text + "<br>";
+      }
+    </script>
+    
+  </body>
+</html>

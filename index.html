@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="script.js"></script>
+    <link href="styles.css" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <p>This is a story about Orpheus and Eurydice.</p>
+    <button onclick="embark()">embark</button>
+    <script>
+      function embark() {
+        var eurydice = window.open("./scenes/eurydice1.html", "eurydice", "width=700,height=1100,left=1000");
+        var orpheus = window.open("./scenes/orpheus1.html", "orpheus", "width=900,height=1100,left=0");
+      }
+    </script>
+    
+  </body>
+</html>
