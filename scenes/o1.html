@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <title>SCENE I: ORPHEUS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../styles.css" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <div id="script"></div>
+
+    <script>
+      var eurydice = window.open("about:blank", "eurydice", "width=700,height=1100,left=1000");
+      eurydice.document.write('<html><head><title>eurydiceeee</title><link rel="stylesheet" type="text/css" href="../styles.css"></head><body>');
+      eurydice.document.write('<div id="script"></div>');
+      
+      var e_content = eurydice.document.getElementById("script");
+      var o_content = document.getElementById("script");
+      
+      document.addEventListener("keydown", line);
+      document.addEventListener("click", line)
+
+      var i = 0;
+
+      function line(e) {  // eurydice proceeds w keypresses
+
+        o_content.innerHTML += o_lines[i];
+        o_content.innerHTML += "<br>"
+        e_content.innerHTML += e_lines[i];
+        e_content.innerHTML += "<br>"
+        i+=1;
+      }
+
+      var o_lines = [
+        "<i>It is your wedding day.</i>",
+        "<i>It is beautiful.</i>",
+        "<i>Music plays.</i>",
+
+        "<h1>ORPHEUS</h1> Eurydice?",
+        "<h1>EURYDICE</h1> I am yours.",
+        "<h1>ORPHEUS</h1> For how long?",
+        "<h1>EURYDICE</h1> As long as you'll have me.",
+
+        "<i>Remember that you love each other.</i>",
+        
+        "<h1>EURYDICE</h1> Do you still want forever, Orpheus?",
+        "<h1>ORPHEUS</h1> I do. I do!",
+        "<h1>EURYDICE</h1> Then forever it is.",
+        "<h1>ORPHEUS</h1> For better or worse.",
+        "<h1>EURYDICE</h1> In sickness and health.",
+        "<h1>ORPHEUS</h1> For richer or poorer.",
+        "<h1>EURYDICE</h1> Til death do us part.",
+
+        "<i>Have you heard this story before?</i>",
+      ]
+
+      var e_lines = [
+        "<i class='altered'>You think back to your wedding day.</i>",
+        "<i class='altered'>It was beautiful.</i>",
+        "<i class='altered'>Music played.</i>",
+
+        "<h1>ORPHEUS</h1> Eurydice?",
+        "<h1>EURYDICE</h1> I am yours.",
+        "<h1>ORPHEUS</h1> For how long?",
+        "<h1>EURYDICE</h1> As long as you'll have me.",
+
+        "<i class='altered'>You remember that you are dead.</i>",
+        
+        "<h1>EURYDICE</h1> Do you still want forever, Orpheus?",
+        "<h1 class='altered'>ORPHEUS</h1> A life without you is not a life worth living.",
+        "<h1>EURYDICE</h1> Then forever it is.",
+        "<h1>ORPHEUS</h1> For better or worse.",
+        "<h1>EURYDICE</h1> In sickness and health.",
+        "<h1>ORPHEUS</h1> For richer or poorer.",
+        "<h1 class='altered'>EURYDICE</h1> Forever is a long time to wait, don't you think?",
+
+        "<i>Have you heard this story before?</i>",
+      ]
+    </script>
+  </body>
+</html>

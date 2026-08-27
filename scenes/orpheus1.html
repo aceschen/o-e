@@ -22,7 +22,7 @@
       var river_lines = [
         "The river is long",
         "and dark", 
-        "and wide.",
+        "and deep.",
         "I cannot see",
         "the other side,",
         "no matter how far",
@@ -61,8 +61,11 @@
         document.body.style.backgroundColor = "#0000FF";
         function riverWindow() {
           let left = (100*i + 1000).toString();
-          let windowSpecs = "width=100,height=1000,left=" + left;
-          windows[i] = window.open("./river/river1.html", "", windowSpecs);
+          let top = (100*i).toString();
+          console.log(left, top);
+          let windowSpecs = "width=100,height=1000,left=" + left + ",top=" + top;     // make shorter if u want top padding
+          let path = "./river/river" + i.toString() + ".html";
+          windows[i] = window.open(path, "", windowSpecs);
           i += 1;
           if (i > 6) {clearInterval(river_flow)};
         }

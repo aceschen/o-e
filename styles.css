@@ -22,6 +22,15 @@ input {
   cursor: url("assets/cursors/text.png"), text;
 }
 
+h1 {
+  font-size: 12pt;
+  margin-bottom: 2px;
+}
+
+.altered {
+  color: red;
+}
+
 #close {
   position: fixed;
   top:0;
